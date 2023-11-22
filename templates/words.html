@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Words{% endblock %}
+
+{% block content %}
+    <h1>Words</h1>
+    <h2>Welcome {{user.username}}</h2>
+    <h2>Get the sorted Word count: </h2>
+    <h2>Top three words of the user</h2>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Count</th>
+        </tr>
+        {% for word, count in sorted_word_freq.items() %}
+            <tr>
+                <td>{{ word }}</td>
+                <td>{{ count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>Top three words of the corpus</h2>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Count</th>
+        </tr>
+        {% for word, count in sorted_word_freq_all.items() %}
+            <tr>
+                <td>{{ word }}</td>
+                <td>{{ count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block style %}
+<style>
+    h1 {
+        text-align: center;
+        margin-top: 30px
+    }
+    h2 {
+        text-align: center;
+        margin-top: 30px
+    }
+    p {
+        text-align: center;
+        margin-top: 30px
+    }
+    table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    tr{
+        border: solid 1px;
+    }
+    td,th{
+        border:solid 1px;
+    }
+</style>
+    
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Phrase{% endblock %}
+
+{% block content %}
+    <h1>Phrase</h1>
+    <h2>Welcome, {{ user.username }}</h2>
+    <table>
+        <tr>
+            <th>Phrase</th>
+            <th>Count</th>
+        </tr>
+        <br>
+        <br>
+        {% for phrase, count in top_unique_phrases %}
+            <tr>
+                <td>{{ phrase }}</td>
+                <td>{{ count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+{% block style %}
+    <style>
+        h1,h2,h3 {
+            text-align: center;
+            }
+        a {
+            text-align: center;
+        }
+        table {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        tr{
+            border: solid 1px;
+        }
+        td,th{
+            border:solid 1px;
+        }
+    </style>
+{% endblock %}

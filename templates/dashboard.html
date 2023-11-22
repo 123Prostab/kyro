@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <h2>Welcome, {{ user.username }}</h2>
+        </div>
+        <h3>link to add input</h3>
+        <a href="{{url_for('input',user = user)}}">Add Input</a>
+        <h3>link to words</h3>
+        <a href="{{url_for('words',user = user)}}">Words</a>
+        <h3>link to phrase</h3>
+        <a href="{{url_for('identify_unique_phrases',user = user)}}">Phrase</a>
+    </div>
+{% endblock %}
+{% block style %}
+    <style>
+        h1,h2,h3 {
+            text-align: center;
+            }
+        a {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+       }
+        .header{
+            background-color: rgb(126, 132, 132);
+            color: white;
+        }
+    
+    </style>
+{% endblock %}
