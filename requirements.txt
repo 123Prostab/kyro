@@ -1,7 +1,7 @@
 annotated-types==0.5.0
 anyio==3.7.1
 appdirs==1.4.4
-blinker==1.7.0
+blinker==1.6.3
 certifi==2023.11.17
 chardet==3.0.4
 charset-normalizer==3.3.2
